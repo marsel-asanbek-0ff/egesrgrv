@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        .card-container {
+            display: flex;
+            justify-content: space-between; 
+            padding: 20px;
+        }
+
+        .card {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            padding: 20px;
+            transition: transform 0.2s, background-color 0.2s, color 0.2s;
+            border: 1px solid #fff;
+            border-radius: 10px;
+            cursor: pointer;
+        }
+
+        .card.active {
+            background-color: orange;
+            color: white;
+            transform: scale(1.05);
+        }
+    </style>
+</head>
+<body>
+    <div class="max-w-screen-lg mx-auto mt-20">
+        <div class="bg-lightGray md:mx-0">
+            <div class="md:mx-0 mx-4">
+                <div class="card-container">
+                    <div class="card">
+                        <div class="mb-6">
+                            <img src="/images/round1.png" alt="Blue Ring"/>
+                        </div>
+                        <span class="text-3xl font-Montserrat font-bold mb-8">Blue Ring</span>
+                    </div>
+                    <div class="card">
+                        <div class="mb-6">
+                            <img src="/images/round2.png" alt="Purple Ring"/>
+                        </div>
+                        <span class="text-3xl font-Montserrat font-bold mb-8">Purple Ring</span>
+                    </div>
+                    <div class="card">
+                        <div class="mb-6">
+                            <img src="/images/round3.png" alt="Red Ring"/>
+                        </div>
+                        <span class="text-3xl font-Montserrat font-bold mb-8">Red Ring</span>
+                    </div>
+                    <div class="card">
+                        <div class="mb-6">
+                            <img src="/images/round4.png" alt="Green Ring"/>
+                        </div>
+                        <span class="text-3xl font-Montserrat font-bold mb-8">Green Ring</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const cards = document.querySelectorAll('.card');
+
+        cards.forEach(card => {
+            card.addEventListener('click', () => {
+                cards.forEach(c => c.classList.remove('active'));
+
+                card.classList.add('active');
+            });
+        });
+    </script>
+</body>
+</html>
